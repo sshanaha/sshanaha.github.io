@@ -1,1 +1,1 @@
-# Rheumatoid-Arthitis
+# Rheumatoid-Arthritis
