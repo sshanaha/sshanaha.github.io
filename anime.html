@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  min-height: 100%;
+}
+
+/* Second image (PoPular Anime) */
+.bgimg-2 {
+  background-image: url("https://images.pexels.com/photos/29901450/pexels-photo-29901450/free-photo-of-creative-anime-cosplay-in-san-jose.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  min-height: 400px;
+}
+
+/* Third image (News) */
+.bgimg-3 {
+  background-image: url("https://imuaonline.org/wp-content/uploads/2020/01/JP0nqc6uxWfs8ML0OnaFA01kHhM3rxOtnnUm2lFJ-900x685.jpeg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Timeline styles */
+.timeline {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.timeline li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline .timeline-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.timeline .timeline-content {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#history" class="w3-bar-item w3-button w3-hide-small"> HISTORY</a>
+    <a href="#anime" class="w3-bar-item w3-button w3-hide-small"> POPULAR ANIME</a>
+    <a href="#news" class="w3-bar-item w3-button w3-hide-small"> NEWS & UPDATES</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#history" class="w3-bar-item w3-button" onclick="toggleFunction()">HISTORY</a>
+    <a href="#anime" class="w3-bar-item w3-button" onclick="toggleFunction()">POPULAR ANIME</a>
+    <a href="#news" class="w3-bar-item w3-button" onclick="toggleFunction()">NEWS & UPDATES</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ANIME <span class="w3-hide-small"></span>
+  </div>
+</div>
+
+<!-- Container (History Section) -->
+<div class="w3-content w3-container w3-padding-64" id="history">
+  <h3 class="w3-center">HISTORY</h3>
+  <p>Anime originated in Japan and combines art, storytelling, and animation. It began in the early 20th century, inspired by Western animation.</p>
+</div>
+  <!-- Timeline Section -->
+  <h4 class="w3-center">Timeline</h4>
+  <ul class="timeline">
+    <li>
+      <div class="timeline-icon">1</div>
+      <div class="timeline-content">
+        <h5>Early Days (1917-1950s):</h5>
+        <p>The first known Japanese animated film, Namakura Gatana (1917), was a short silent animation. Post-WWII, Osamu Tezuka, often called the "God of Manga," introduced Astro Boy (1963), marking anime's modern era.</p>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-icon">2</div>
+      <div class="timeline-content">
+        <h5>Golden Age (1970s-1980s):</h5>
+        <p>The 70s saw mecha anime rise (Mobile Suit Gundam). By the 80s, anime like Dragon Ball and Akira gained international acclaim, showing mature and diverse storytelling.</p>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-icon">3</div>
+      <div class="timeline-content">
+        <h5>Global Popularity (1990s-Present):</h5>
+        <p>The 90s brought classics like Sailor Moon, Pokémon, and Neon Genesis Evangelion. Today, anime spans genres and enjoys a massive global audience, with streaming services making it more accessible than ever.</p>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="w3-center bgimg-2 w3-display-container w3-opacity-min" id="anime">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">POPULAR ANIMES</span>
+  </div>
+</div>
+
+<!-- Container (Section) -->
+<div class="w3-content w3-container w3-padding-64" id="anime">
+  <h3 class="w3-center">Popular Anime</h3>
+  
+  <!-- Responsive Grid -->
+  <div class="w3-row-padding w3-center" style="margin-left: -8px; margin-right: -8px;">
+    <div class="w3-col m6 w3-card-4" style="margin-bottom: 20px; padding-left: 8px; padding-right: 8px;">
+      <img src="https://wallpapers.com/images/high/naruto-s-friend-1920-x-1356-wallpaper-5rb8vq96rexpy1r5.webp" style="width:100%; height:200px; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Naruto">
+      <a href="https://www.crunchyroll.com/series/GY9PJ5KWR/naruto?srsltid=AfmBOoqw13TCj-31MaXeC488yzdb04Rt1bAx4xJ-NM1l1B_dEm-jTaTI" target="_blank">
+        <button class="w3-button w3-green w3-margin-top w3-margin-bottom">Naruto</button>
+      </a>      
+    </div>
+    
+    <div class="w3-col m6 w3-card-4" style="margin-bottom: 20px; padding-left: 8px; padding-right: 8px;">
+      <img src="https://wallpapers.com/images/high/luffy-aesthetic-under-a-cloudy-sky-uf0fbc77eqxixx0a.webp" style="width:100%; height:200px; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="One Piece">
+      <a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" target="_blank">
+        <button class="w3-button w3-green w3-margin-top w3-margin-bottom">One Piece</button>
+      </a>      
+    </div>
+    
+    <div class="w3-col m6 w3-card-4" style="margin-bottom: 20px; padding-left: 8px; padding-right: 8px;">
+      <img src="https://wallpapers.com/images/high/attack-on-titan-survey-corps-soldiers-4iypagq5m2yz22lt.webp" style="width:100%; height:200px; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Attack On Titan">
+      <a href="https://www.crunchyroll.com/series/GR751KNZY/attack-on-titan" target="_blank">
+        <button class="w3-button w3-green w3-margin-top w3-margin-bottom">Attack On Titan</button>
+      </a>      
+    </div>
+    
+    <div class="w3-col m6 w3-card-4" style="margin-bottom: 20px; padding-left: 8px; padding-right: 8px;">
+      <img src="https://wallpapers.com/images/high/fairy-tail-background-u2fir9xzms78mxyy.webp" style="width:100%; height:200px; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Fairy Tail">
+      <a href="https://www.crunchyroll.com/series/G6DQDD3WR/fairy-tail" target="_blank">
+        <button class="w3-button w3-green w3-margin-top w3-margin-bottom">Fairy Tail</button>
+      </a>      
+    </div>
+  </div>
+</div>
+
+
+<!-- News & Updates Section -->
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="news">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-xxlarge w3-text-white w3-wide">NEWS & UPDATES</span>
+  </div>
+</div>
+
+
+<!-- News & Updates Container -->
+<div class="w3-content w3-container w3-padding-64" id="news">
+  <h3 class="w3-center">Latest News in Anime</h3>
+  
+  <!-- Timeline for Anime News -->
+  <ul class="timeline">
+    <li>
+      <div class="timeline-icon">1</div>
+      <div class="timeline-content">
+        <h4><a href="https://animeschedule.net" target="_blank">Anime Release!</a></h4>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-icon">2</div>
+      <div class="timeline-content">
+         <h4><a href="https://animecons.com/events/" target="_blank">Anime Convention Announced for 2025!</a></h4>
+      </div>
+    </li>
+    <li>
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Shamia Shanaha</p>
+</footer>
+
+<script>
+// Function to toggle navigation on small screens
+function toggleFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
