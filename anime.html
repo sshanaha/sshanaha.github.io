@@ -47,12 +47,14 @@ body, html {
 .timeline {
   list-style-type: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 20px auto; /* Center the timeline */
+  max-width: 900px; /* Set a max-width to prevent it from becoming too wide */
 }
 
 .timeline li {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center the items */
   margin-bottom: 20px;
 }
 
@@ -72,7 +74,8 @@ body, html {
   background-color: #f4f4f4;
   padding: 10px;
   border-radius: 5px;
-  width: 80%;
+  width: 80%; /* Adjust the width of the content */
+  text-align: left; /* Align text inside the content box */
 }
 
 .w3-hover-opacity {cursor: pointer;}
@@ -105,7 +108,6 @@ body, html {
     <a href="#history" class="w3-bar-item w3-button" onclick="toggleFunction()">HISTORY</a>
     <a href="#anime" class="w3-bar-item w3-button" onclick="toggleFunction()">POPULAR ANIME</a>
     <a href="#news" class="w3-bar-item w3-button" onclick="toggleFunction()">NEWS & UPDATES</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
 
