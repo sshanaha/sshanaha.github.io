@@ -1,0 +1,628 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black; 
+}
+
+@keyframes moveBackground {
+    0% { background-position: 50% 0%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
+
+/* Navbar stays at the top */
+.navbar {
+    background-color: black;
+    padding: 10px;
+    position: relative; /* Ensure navbar stays on top */ 
+    font-family: "Monospace", sans-serif;
+}
+
+/* Target the ul inside the navbar */
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Target list items inside the navbar ul */
+.navbar ul li {
+    flex: 0;
+}
+
+/* Target links inside the navbar list items */
+.navbar ul li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Hover effect for navbar links */
+.navbar ul li a:hover {
+    background-color: black;
+    transform: scale(1.5); /* Make the hover box bigger */
+
+}
+
+/* Header background image - Appears below navbar */
+.header-background {
+    background-image: url("https://images.pexels.com/photos/2874998/pexels-photo-2874998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-size: 100%;
+    height: 400px; /* Adjust height as needed */
+    width: 100%;
+    position: relative;
+    
+}
+
+.title {
+    position: absolute;
+    bottom: 10%; /* 10% from the bottom */
+    left: 5%; /* 5% from the left */
+    transform: translate(0, 0); /* No need for centering, just position bottom-left */
+    color: whitesmoke;
+    font-size: 3rem;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: "Monospace", sans-serif;
+}
+
+.button{
+    position: absolute;
+    bottom: 5%; /* Slightly above the bottom */
+    left: 5%; /* Align with the title */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+/* Style for sections */
+section {
+    background: green;
+    padding: 20px;
+    margin: 10px 0;
+    color: white; /* Ensure text is readable on the green background */
+}
+
+
+/* Card Section */
+.card-container {
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: flex-start; /* Align cards to the top */
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+    background-color: white;
+    color: black;
+    flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+    margin-bottom: 50px; /* Add space below the card section */
+}
+
+/* Individual card styles */
+.card {
+    background-color: #f9f9f9;
+    border: 2px solid rgb(255,248,220);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Fixed width for consistency */
+    height: 200px; /* Slightly longer cards */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: cover; /* Ensure the background image covers the entire card */
+    background-position: center; /* Center the background image */
+    color: white; /* Text color for visibility */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add background images to each card */
+.card-notes {
+    background-image: url('https://images.unsplash.com/photo-1569360531163-a61fa3da86ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxqb3VybmFsfGVufDB8fDB8fHww'); /* Replace with actual path */
+}
+
+.card-dates {
+    background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1768&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with actual path */
+}
+
+.card-tasks {
+    background-image: url('https://images.unsplash.com/photo-1642543492457-39a2ce63bb59?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with actual path */
+}
+
+/* Card content (text and button) */
+.card .content {
+    position: relative;
+    z-index: 2; /* Ensure text and button are on top of the overlay */
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5); /* Darken background behind text for contrast */
+    border-radius: 8px; /* Optional: rounds the corners of the text container */
+}
+
+/* Card hover effects */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: rgb(248, 248, 247); /* White text for better contrast */
+    font-weight: bold; /* Make the heading bold */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+    padding: 5px 10px;
+    border-radius: 9px; /* Optional: rounded corners for a smoother look */
+}
+
+/* Card paragraph styles */
+.card p {
+    font-size: 1rem;
+    color: rgb(255, 255, 255); /* White text for better contrast */
+    font-weight: bold;
+    background-color: rgba(81, 75, 75, 0.7); /* Black background with transparency */
+    padding: 1px; /* Add padding for spacing around the text */
+    border-radius: 5px; /* Optional: rounded corners for a smoother look */
+}
+
+/* Card button styles */
+.card-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(160,82,45);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: 	rgb(128,0,0);
+}
+
+
+.card-image {
+    width: 100%; /* Make the image fill the width of the card */
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+/* Quotes Section */
+.quotes-container {
+    background-color: #f0f8ff; /* Soft blue background */
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quotes-container h2 {
+    font-size: 2rem;
+    color: #4CAF50; /* Green title color */
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333; /* Darker text for readability */
+    margin: 10px 0;
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #f7f7f7; /* Light background color */
+    padding: 40px 20px; /* Add padding around the section */
+    margin: 40px auto; /* Center the section and give it some space around */
+    max-width: 800px; /* Limit the width */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.about-section h2 {
+    font-size: 2em; /* Larger font size for the heading */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about-section p {
+    font-size: 1.1em; /* Slightly larger font size for better readability */
+    color: #666; /* Lighter text color */
+    line-height: 1.6; /* Space between lines for readability */
+    text-align: center; /* Center the paragraph */
+    max-width: 700px; /* Limit the width of the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+.calendar-container {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  #calendar div {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+  }
+  
+  #calendar div:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #calendar .day {
+    font-size: 1.2em;
+    color: black;
+  }
+  
+  #calendar .event {
+    font-size: 0.8em;
+    margin-top: 5px;
+    background-color: #b3e5fc;
+    padding: 3px;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  /* Modal styling */
+#eventModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Form Styling */
+  .modal-content input,
+  .modal-content select,
+  .modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Focus state for inputs */
+  .modal-content input:focus,
+  .modal-content select:focus,
+  .modal-content textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  /* Styling for the submit button */
+  .modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Close Button */
+  .modal-content .close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+  
+  .modal-content .close-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Label Styling */
+  .modal-content label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Styling for the Event Reminder Input */
+  .modal-content #eventReminder {
+    font-size: 1rem;
+    padding: 8px;
+    margin-top: 10px;
+  }
+
+
+  /* Calendar Header Title */
+.calendar-header-title {
+    color: black; /* Ensure the header title is black */
+    font-size: 2rem;
+    
+}
+
+/* Calendar Month and Year */
+#monthYear {
+    color: black; /* Set the month and year text to black */
+    font-size: 1.5rem;
+}
+
+/* Calendar Controls (Prev & Next buttons) */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between; /* Spread the buttons to the edges */
+    align-items: center;
+    width: 100%;
+    padding: 0 10px; /* Adjust padding for button positioning */
+}
+
+/* Calendar Control Buttons */
+#prevMonth, #nextMonth {
+    font-size: 1.2rem; /* Increase button text size */
+    padding: 10px;
+    background-color: rgb(160,82,45);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+#prevMonth:hover, #nextMonth:hover {
+    background-color: rgb(128,0,0);
+}
+  
+/* Tasks Section */
+/* Task Section */
+.task-section {
+    width: 100%;
+    max-width: 600px; /* Maximum width for task section */
+    margin: 0 auto; /* Center the task section horizontally */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Task Heading */
+.task-section h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Task Input and Button */
+.task-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+}
+
+.task-input input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.task-input button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: rgb(160,82,45);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-input button:hover {
+    background-color: rgb(128,0,0);
+}
+
+/* Task List */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    color: black;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between; /* Aligns content on both ends */
+    align-items: center; /* Vertically centers the content */
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Task Text */
+#taskList li span {
+    flex-grow: 1; /* Ensures that the text takes up the available space */
+}
+
+
+/* Delete Button Styling */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* General Styles for Notes Page */
+.journal-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.journal-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Editable Journal Area */
+.editable-area {
+    width: 100%;
+    height: 300px; /* Large enough for journaling */
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: black; /* Ensures text is black */
+    text-align: left; /* Aligns text to the left */
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    outline: none; /* Removes outline on click */
+}
+
+.journal-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.journal-input button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: rgb(160,82,45);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; /* Button width */
+}
+
+.journal-input button:hover {
+    background-color: rgb(128,0,0);
+}
+
+/* Image Upload Button */
+.image-insert {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#add-image-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-image-btn:hover {
+    background-color: #1976D2;
+}
+
+/* Journal Entry Container */
+#journal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.journal-entry {
+    color: black !important; /* Ensures text is black */
+    background-color: white; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+
+footer {
+    position: relative; 
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    margin-top: auto; 
+}
