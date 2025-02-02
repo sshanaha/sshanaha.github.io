@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Focus Flow - Tasks</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="dates.html">Dates</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header background -->
+    <div class="header-background">
+        <h1 class="title">Tasks</h1>
+    </div>
+
+    <!-- Task Form Container -->
+    <div class="task-section">
+        <h1>To Do List</h1>
+        
+        <!-- Task Input Section -->
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <button id="addTaskButton" onclick="addTask()">Add Task</button>
+        </div>
+    
+        <!-- Ordered List to Display Tasks -->
+        <ol id="taskList">
+          <!-- Tasks will be dynamically added here -->
+        </ol>
+    </div>
+
+    <footer>Shamia Shanaha</footer>
+
+    <!-- Include the script at the end -->
+    <script src="script.js"></script>
+</body>
+</html>
