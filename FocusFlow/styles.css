@@ -250,13 +250,16 @@ section {
     margin: 0 auto; /* Center the paragraph */
 }
 
+/* Container */
 .calendar-container {
     text-align: center;
-    max-width: 600px;
+    max-width: 100%;
     margin: auto;
     margin-bottom: 50px;
+    padding: 10px; /* Added padding to avoid content touching the edges */
   }
   
+  /* Calendar Header */
   .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -265,14 +268,16 @@ section {
     color: black;
   }
   
+  /* Grid Layout for the Calendar */
   #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
   }
   
+  /* Style for individual days */
   #calendar div {
-    padding: 20px;
+    padding: 15px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     text-align: center;
@@ -280,15 +285,18 @@ section {
     color: black;
   }
   
+  /* Hover effect for days */
   #calendar div:hover {
     background-color: #e0e0e0;
   }
   
+  /* Style for day numbers */
   #calendar .day {
     font-size: 1.2em;
     color: black;
   }
   
+  /* Style for event labels */
   #calendar .event {
     font-size: 0.8em;
     margin-top: 5px;
@@ -298,8 +306,8 @@ section {
     color: black;
   }
   
-  /* Modal styling */
-#eventModal {
+  /* Modal Styling */
+  #eventModal {
     display: none;
     position: fixed;
     top: 0;
@@ -323,7 +331,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   
-  /* Form Styling */
+  /* Form inputs */
   .modal-content input,
   .modal-content select,
   .modal-content textarea {
@@ -336,7 +344,6 @@ section {
     box-sizing: border-box;
   }
   
-  /* Focus state for inputs */
   .modal-content input:focus,
   .modal-content select:focus,
   .modal-content textarea:focus {
@@ -344,9 +351,8 @@ section {
     outline: none;
   }
   
-  /* Styling for the submit button */
   .modal-content button {
-    background-color: #4CAF50;
+    background-color: rgb(160,82,45);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -358,10 +364,9 @@ section {
   }
   
   .modal-content button:hover {
-    background-color: #45a049;
+    background-color: rgb(128,0,0);
   }
   
-  /* Close Button */
   .modal-content .close-btn {
     background-color: #f44336;
     color: white;
@@ -377,7 +382,6 @@ section {
     background-color: #d32f2f;
   }
   
-  /* Label Styling */
   .modal-content label {
     font-size: 1.1rem;
     font-weight: bold;
@@ -385,39 +389,35 @@ section {
     color: #333;
   }
   
-  /* Styling for the Event Reminder Input */
   .modal-content #eventReminder {
     font-size: 1rem;
     padding: 8px;
     margin-top: 10px;
   }
-
-
+  
   /* Calendar Header Title */
-.calendar-header-title {
-    color: black; /* Ensure the header title is black */
+  .calendar-header-title {
+    color: black;
     font-size: 2rem;
-    
-}
-
-/* Calendar Month and Year */
-#monthYear {
-    color: black; /* Set the month and year text to black */
+  }
+  
+  /* Calendar Month and Year */
+  #monthYear {
+    color: black;
     font-size: 1.5rem;
-}
-
-/* Calendar Controls (Prev & Next buttons) */
-.calendar-controls {
+  }
+  
+  /* Calendar Controls */
+  .calendar-controls {
     display: flex;
-    justify-content: space-between; /* Spread the buttons to the edges */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 10px; /* Adjust padding for button positioning */
-}
-
-/* Calendar Control Buttons */
-#prevMonth, #nextMonth {
-    font-size: 1.2rem; /* Increase button text size */
+    padding: 0 10px;
+  }
+  
+  #prevMonth, #nextMonth {
+    font-size: 1.2rem;
     padding: 10px;
     background-color: rgb(160,82,45);
     color: white;
@@ -425,14 +425,66 @@ section {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-/* Hover effect for buttons */
-#prevMonth:hover, #nextMonth:hover {
-    background-color: rgb(128,0,0);
-}
+  }
   
-/* Tasks Section */
+  #prevMonth:hover, #nextMonth:hover {
+    background-color: rgb(128,0,0);
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .calendar-header-title {
+      font-size: 1.5rem; /* Smaller title */
+    }
+  
+    #calendar {
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px; /* Reduced gap for smaller screens */
+    }
+  
+    #calendar div {
+      padding: 10px;
+      font-size: 1rem; /* Smaller day text */
+    }
+  
+    #prevMonth, #nextMonth {
+      font-size: 1rem; /* Smaller buttons */
+      padding: 8px;
+    }
+  
+    .modal-content {
+      max-width: 90%; /* Modal takes more screen width */
+    }
+  
+    .modal-content input,
+    .modal-content select,
+    .modal-content textarea {
+      font-size: 0.9rem; /* Smaller input fields */
+    }
+  
+    .modal-content button {
+      font-size: 1rem; /* Button font size for mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .calendar-header-title {
+      font-size: 1.2rem; /* Further reduced title size for smaller screens */
+    }
+  
+    #calendar {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  
+    .modal-content {
+      max-width: 95%; /* Further reduce modal width for mobile */
+    }
+  
+    .modal-content button {
+      font-size: 0.9rem; /* Adjust button text size */
+    }
+  }
+  
 /* Task Section */
 .task-section {
     width: 100%;
@@ -617,7 +669,7 @@ section {
 
 
 footer {
-    position: relative; 
+    position: relative; /* Changed from fixed to relative */
     width: 100%;
     background-color: #333;
     color: white;
