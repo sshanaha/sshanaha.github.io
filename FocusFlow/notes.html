@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Focus Flow - Notes</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="dates.html">Dates</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header background -->
+    <div class="header-background">
+        <h1 class="title">Journal</h1>
+    </div>
+
+    <!-- Journal Section -->
+    <div class="journal-section">
+        <!-- Left Side: Journal Entry Input -->
+        <div class="journal-input">
+            <h2>Write Your Journal</h2>
+            <div id="journal-entry" contenteditable="true" class="editable-area" placeholder="Start writing your journal..."></div>
+
+            <button id="add-entry" onclick="addJournalEntry()">Add Entry</button>
+        </div>
+
+        <!-- Right Side: Journal Entries Display -->
+        <div id="journal-container">
+            <h2>Your Journal Entries</h2>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>Shamia Shanaha</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
