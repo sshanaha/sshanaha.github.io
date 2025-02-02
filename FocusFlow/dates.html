@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Focus Flow</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="dates.html">Dates</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header background -->
+    <div class="header-background">
+        <h1 class="title">Calender</h1>
+    </div>
+    <div class="calendar-container">
+        <!-- Calendar Header -->
+        <h2 class="calendar-header-title">Calendar</h2>
+        <div class="calendar-wrapper">
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="calendar-controls">
+                    <button id="prevMonth">Prev</button>
+                    <span id="monthYear">January 2025</span>
+                    <button id="nextMonth">Next</button>
+                </div>
+                <div class="calendar" id="calendar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for adding event -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <h4>Add Event</h4>
+            <label for="eventTitle">Event Title:</label>
+            <input type="text" id="eventTitle" placeholder="Enter event title" required>
+            <label for="eventTime">Event Time:</label>
+            <input type="time" id="eventTime" required>
+            <button id="submitEvent">Submit Event</button>
+        </div>
+    </div>
+
+    <footer>Footer</footer>
+    <script src="script.js"></script>
+</body>
+</html>
